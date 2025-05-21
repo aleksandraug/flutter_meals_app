@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/models/meal.dart';
-import 'package:meals_app/widgets/meal_item_trait.dart';
+import 'package:meals_app/features/meals/models/meal.dart';
+import 'package:meals_app/features/meals/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class MealItem extends StatelessWidget{
-
-  const MealItem({super.key, required this.meal, required this.onSelectMeal });
+class MealItem extends StatelessWidget {
+  const MealItem({super.key, required this.meal, required this.onSelectMeal});
 
   final Meal meal;
   final void Function(BuildContext context, Meal meal) onSelectMeal;
 
-  String get compexityText{
-    return meal.complexity.name[0].toUpperCase() + meal.complexity.name.substring(1);
+  String get compexityText {
+    return meal.complexity.name[0].toUpperCase() +
+        meal.complexity.name.substring(1);
   }
 
-  String get affordabilityText{
-    return meal.affordability.name[0].toUpperCase() + meal.affordability.name.substring(1);
+  String get affordabilityText {
+    return meal.affordability.name[0].toUpperCase() +
+        meal.affordability.name.substring(1);
   }
 
   @override
@@ -26,7 +27,7 @@ class MealItem extends StatelessWidget{
       clipBehavior: Clip.hardEdge,
       elevation: 2,
       child: InkWell(
-        onTap: (){
+        onTap: () {
           onSelectMeal(context, meal);
         },
         child: Stack(
@@ -34,7 +35,7 @@ class MealItem extends StatelessWidget{
             Hero(
               tag: meal.id,
               child: FadeInImage(
-                placeholder: MemoryImage(kTransparentImage), 
+                placeholder: MemoryImage(kTransparentImage),
                 image: NetworkImage(meal.imageUrl),
                 fit: BoxFit.cover,
                 height: 200,
@@ -47,39 +48,47 @@ class MealItem extends StatelessWidget{
               left: 0,
               child: Container(
                 color: Colors.black45,
-                padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 44),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 6,
+                  horizontal: 44,
+                ),
                 child: Column(
                   children: [
                     Text(
-                      meal.title, 
-                      maxLines: 2, 
-                      textAlign: TextAlign.center, 
-                      softWrap: true, 
+                      meal.title,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white
+                        color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 12,),
+                    const SizedBox(height: 12),
                     Row(
                       children: [
-                        MealItemTrait(icon: Icons.schedule, label: '${meal.duration} min'),
-                        const SizedBox(width: 16,),
+                        MealItemTrait(
+                          icon: Icons.schedule,
+                          label: '${meal.duration} min',
+                        ),
+                        const SizedBox(width: 16),
                         MealItemTrait(icon: Icons.work, label: compexityText),
-                        const SizedBox(width: 16,),
-                        MealItemTrait(icon: Icons.attach_money, label: affordabilityText)
+                        const SizedBox(width: 16),
+                        MealItemTrait(
+                          icon: Icons.attach_money,
+                          label: affordabilityText,
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
-  
 }

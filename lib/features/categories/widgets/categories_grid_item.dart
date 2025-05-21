@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/models/category.dart';
+import 'package:meals_app/features/categories/models/category.dart';
 
-class CategoryGridItem extends StatelessWidget{
-
+class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem({
-    super.key, 
+    super.key,
     required this.category,
-    required this.onSelectCategory
+    required this.onSelectCategory,
   });
 
   final Category category;
@@ -25,13 +24,14 @@ class CategoryGridItem extends StatelessWidget{
           gradient: LinearGradient(
             colors: [
               category.color.withOpacity(0.55),
-              category.color.withOpacity(0.9),      
+              category.color.withOpacity(0.9),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
-        child: Text(category.title,
+        child: Text(
+          category.title,
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
             color: Theme.of(context).colorScheme.onBackground,
           ),
@@ -39,5 +39,4 @@ class CategoryGridItem extends StatelessWidget{
       ),
     );
   }
-
 }
