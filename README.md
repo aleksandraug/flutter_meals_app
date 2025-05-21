@@ -57,3 +57,10 @@
    ```bash
    git clone https://github.com/aleksandraug/flutter_meals_app.git
    cd meals_app
+
+2. Установить зависимости:
+   flutter pub get
+
+
+3. Запустить на устройстве или эмуляторе:
+   flutter run
