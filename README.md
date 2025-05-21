@@ -33,10 +33,11 @@
 <details>
 <summary>Скриншоты / GIF (кликни, чтобы развернуть)</summary>
 
-![Категории блюд](assets/images/categories.png)  
-![Список фильтров](assets/images/filters.png)  
-![Детали блюда](assets/images/meal_details.png)  
-![Избранное](assets/images/favorites.png)  
+![Список категории](https://github.com/user-attachments/assets/7fe12f32-ed59-486d-9376-5d22d99157bc)
+![Список фильтров](https://github.com/user-attachments/assets/50d9ea50-9517-48b3-ac2a-bbfa0bb89d93)
+![Детали блюда](https://github.com/user-attachments/assets/0bdcb8c7-0bfd-4004-aae3-0df0d59fe83b)
+![Избранное](https://github.com/user-attachments/assets/7f122f6c-08bd-4305-8f91-1b23cbf43288)
+
 
 </details>
 
